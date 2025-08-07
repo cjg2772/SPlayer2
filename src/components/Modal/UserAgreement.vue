@@ -16,8 +16,8 @@
         <n-tag type="warning" round>更新日期：2025 年 5 月 10 日</n-tag>
       </n-flex>
       <n-p>
-        欢迎使用 SPlayer（以下简称“本网站”）。本网站是一个本地音乐播放网站，可能会调用第三方 API
-        来增强其功能。请在使用本网站前仔细阅读本用户协议。本协议是您（以下简称“用户”）与 SPlayer
+        欢迎使用 LCY Music Pro（以下简称“本网站”）。本网站是一个本地音乐播放网站，可能会调用第三方 API
+        来增强其功能。请在使用本网站前仔细阅读本用户协议。本协议是您（以下简称“用户”）与 LCY Music Pro
         开发团队（以下简称“开发者”）之间的法律协议。一旦您下载、安装或使用本网站，即表示您同意接受本协议的所有条款和条件。
       </n-p>
       <n-h3 prefix="bar"> 网站使用 </n-h3>
@@ -25,17 +25,6 @@
         <n-li>本网站是一款在线音乐播放网站，允许用户播放存储于第三方数据库的音频文件。</n-li>
         <n-li>开发者保留随时修改、更新或终止网站及其功能的权利，而无需提前通知用户。</n-li>
         <n-li>用户必须年满 18 岁或在父母或监护人的监督下使用本网站。</n-li>
-      </n-ol>
-      <n-h3 prefix="bar"> 开源许可 </n-h3>
-      <n-ol>
-        <n-li>本网站是基于 AGPL-3.0 许可发布的开源网站。</n-li>
-        <n-li>用户在使用、修改和分发 SPlayer 时，必须遵守 AGPL-3.0 许可的条款和条件。</n-li>
-        <n-li>
-          AGPL-3.0 许可的详细信息可以在以下链接找到：
-          <n-a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank">
-            GNU Affero General Public License v3.0
-          </n-a>
-        </n-li>
       </n-ol>
       <n-h3 prefix="bar"> 第三方 </n-h3>
       <n-ol>
