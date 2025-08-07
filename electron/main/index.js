@@ -106,7 +106,7 @@ class MainProcess {
   createWindow() {
     // 创建浏览器窗口
     this.mainWindow = new BrowserWindow({
-      title: app.getName() || "SPlayer",
+      title: app.getName() || "LCY Music Pro",
       width: this.store.get("windowSize.width") || 1280, // 窗口宽度
       height: this.store.get("windowSize.height") || 740, // 窗口高度
       minHeight: 700, // 最小高度
