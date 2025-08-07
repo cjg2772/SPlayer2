@@ -18,7 +18,7 @@ const useSiteSettingsStore = defineStore("siteSettings", {
       systemFonts: "HarmonyOS Sans", // 全局字体 (仅 Electron)
       justLyricArea: false, // 仅在歌词区域生效
       hiddenVipTags: false, // 隐藏 VIP 标签
-      webFonts: "LXGW WenKai", // 网页字体
+      webFonts: "HarmonyOS Sans", // 网页字体
       fontBold: true, // 字体加粗
       showVersion: false, // 显示版本号
       // 主题部分
