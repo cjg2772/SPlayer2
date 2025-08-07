@@ -48,7 +48,7 @@ const useSiteSettingsStore = defineStore("siteSettings", {
       // 歌词部分
       lrcMousePause: false, // 鼠标移入歌词区域暂停滚动
       lyricsFontSize: 36, // 歌词大小
-      lyricsFont: "LXGW WenKai", // 歌词字体
+      lyricsFont: "PingFang SC", // 歌词字体
       lyricsBlur: true, // 歌词模糊
       lyricsBold: true, // 歌词加粗
       showYrc: true, // 是否显示逐字歌词
