@@ -333,7 +333,7 @@ export const createPlayer = async (src, autoPlay = true) => {
         electron.ipcRenderer.send("songStateChange", false);
       }
       // 更改页面标题
-      if (!checkPlatform.electron()) document.title = defaultTitle || "SPlayer";
+      if (!checkPlatform.electron()) document.title = defaultTitle || "LCY Music Pro";
     });
     // 结束播放
     player?.on("end", () => {
