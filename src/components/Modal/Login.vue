@@ -16,7 +16,7 @@
         <img class="logo" src="/imgs/icons/favicon.png?asset" alt="logo" />
       </div>
       <n-alert type="error" style="margin-bottom: 16px;">
-        警告: 由于网易云音乐官方正在严查脚本使用者，会把第三方网易云API误判从而会被冻结账号，在风波过去之前建议先不要登录
+        警告: 在本站登录可能会被官方误判而被冻结账号，故请选择不常用的账号进行登录
       </n-alert>
       <!-- 登录方式 -->
       <n-tabs class="login-tabs" default-value="login-qr" type="segment" animated>
