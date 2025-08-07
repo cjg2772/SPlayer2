@@ -9,7 +9,7 @@
       class="phone-form"
     >
       <n-alert type="error" style="margin-bottom: 16px;">
-        提示: 由于站点默认API部署在香港地区有可能导致手机号登陆失败, 建议使用自部署的API或者使用扫码登陆
+        提示: 由于站点搭建于中国香港地区，可能导致手机号登录失败。若手机号登录失败，请重新尝试或使用扫码登录
       </n-alert>
       <n-form-item path="phone">
         <n-input v-model:value="phoneFormData.phone" placeholder="请输入手机号">
