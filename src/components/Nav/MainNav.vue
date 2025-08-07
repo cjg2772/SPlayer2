@@ -119,7 +119,7 @@ const { showGithub, showSider, themeAutoCover, showVersion } = storeToRefs(sites
 // 站点信息
 const siteVersion = packageJson.version;
 const siteTemp = import.meta.env.RENDERER_VITE_SITE_TITLE ?? "LCY Music Pro";
-const siteName = "LCY Music Pro" + (showVersion.value ? " v" + siteVersion : "");
+const siteName = siteTemp + (showVersion.value ? " v" + siteVersion : "");
 
 // 打开 GitHub
 const openGithub = () => {
