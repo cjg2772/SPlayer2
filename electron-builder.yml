@@ -1,8 +1,8 @@
 # 应用程序的唯一标识符
-appId: com.iamfurina.splayer
+appId: com.lcyteam.music
 # 应用程序的产品名称
-productName: SPlayer
-copyright: Copyright © IamFurina 2025
+productName: LCY Music Pro
+copyright: Copyright © LCY Team 2025
 # 构建资源所在的目录
 directories:
   buildResources: build
@@ -19,7 +19,7 @@ asarUnpack:
 # Windows 平台配置
 win:
   # 可执行文件名
-  executableName: SPlayer
+  executableName: LCY Music Pro
   # 应用程序的图标文件路径
   icon: public/imgs/icons/favicon-512x512.png
   # 构建类型
@@ -47,7 +47,7 @@ nsis:
 # macOS 平台配置
 mac:
   # 可执行文件名
-  executableName: SPlayer
+  executableName: LCY Music Pro
   # 应用程序的图标文件路径
   icon: public/imgs/icons/favicon-512x512.png
   # 权限继承的文件路径
@@ -78,7 +78,7 @@ dmg:
 # Linux 平台配置
 linux:
   # 可执行文件名
-  executableName: SPlayer
+  executableName: LCY Music Pro
   # 应用程序的图标文件路径
   icon: public/imgs/icons/favicon-512x512.png
   # 构建类型
@@ -104,5 +104,5 @@ publish:
   provider: github
   # 自动更新检查的 URL
   # url: https://example.com/auto-updates
-  owner: "IamFurina"
-  repo: "SPlayer"
+  owner: "LCY Team"
+  repo: "LCY Music Pro"
