@@ -17,11 +17,13 @@ jobs:
       # 检出 Git 仓库
       - name: Check out git repository
         uses: actions/checkout@v4
+
       # 安装 Node.js
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22.x"
+
       # 复制环境变量文件
       - name: Copy .env.example
         run: |
@@ -30,34 +32,40 @@ jobs:
           } else {
             Write-Host ".env file already exists. Skipping the copy step."
           }
+
       # 安装项目依赖
       - name: Install Dependencies
         run: npm install pnpm -g && pnpm install
-      # 构建 Electron App
+
+      # 构建 Electron App（使用 GH_TOKEN 而不是 GITHUB_TOKEN）
       - name: Build Electron App
         run: pnpm run build:win
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
       # 清理不必要的构建产物
       - name: Cleanup Artifacts
         run: |
           npx rimraf "dist/!(*.exe)"
-      # 上传构建产物
+
+      # 上传构建产物到 Actions（非 tag 构建用）
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: LCY-Music-Pro-dev
           path: dist
-      # 创建 GitHub Release
+
+      # 创建 GitHub Release（仅在 tag 构建时执行）
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/v')
         with:
           tag_name: ${{ github.ref }}
           name: ${{ github.ref }}-rc
-          body: This version is still under development, currently only provides windows version, non-developers please do not use!
+          body: |
+            This version is still under development, currently only provides windows version, non-developers please do not use!
           draft: false
           prerelease: true
           files: dist/*.exe
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
