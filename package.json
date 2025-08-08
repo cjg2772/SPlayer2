@@ -1,12 +1,12 @@
 {
-  "name": "splayer",
-  "version": "2.7.34",
-  "description": "一个部署简单且界面美观的音乐播放器",
+  "name": "LCY Music Pro",
+  "version": "1.0.0",
+  "description": "A Music Player",
   "main": "./out/main/index.js",
-  "author": "MoeFurina",
-  "home": "https://www.focalors.ltd",
+  "author": "LCY Team",
+  "home": "https://blog.lcyteam.me",
   "github": "https://github.com/LCYTeam2024",
-  "repository": "github:MoeFurina/SPlayer",
+  "repository": "github:LCYTeam2024",
   "license": "AGPL-3.0",
   "license-file": "LICENSE",
   "engines": {
