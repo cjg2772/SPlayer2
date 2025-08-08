@@ -99,10 +99,10 @@ appImage:
 # 是否在构建之前重新编译原生模块
 npmRebuild: false
 # 自动更新的配置
-publish:
-  # 更新提供商
-  provider: github
-  # 自动更新检查的 URL
-  # url: https://example.com/auto-updates
-  owner: "LCYTeam"
-  repo: "LCYMusicPro"
+# publish:
+#   # 更新提供商
+#   provider: github
+#   # 自动更新检查的 URL
+#   # url: https://example.com/auto-updates
+#   owner: "LCYTeam"
+#   repo: "LCYMusicPro"
