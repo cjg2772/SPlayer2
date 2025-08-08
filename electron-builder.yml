@@ -104,5 +104,5 @@ publish:
   provider: github
   # 自动更新检查的 URL
   # url: https://example.com/auto-updates
-  owner: "LCY Team"
-  repo: "LCY Music Pro"
+  owner: "LCYTeam"
+  repo: "LCYMusicPro"
