@@ -19,7 +19,7 @@ asarUnpack:
 # Windows 平台配置
 win:
   # 可执行文件名
-  executableName: LCY Music Pro
+  executableName: LCYMusicPro
   # 应用程序的图标文件路径
   icon: public/imgs/icons/favicon-512x512.png
   # 构建类型
@@ -47,7 +47,7 @@ nsis:
 # macOS 平台配置
 mac:
   # 可执行文件名
-  executableName: LCY Music Pro
+  executableName: LCYMusicPro
   # 应用程序的图标文件路径
   icon: public/imgs/icons/favicon-512x512.png
   # 权限继承的文件路径
@@ -78,7 +78,7 @@ dmg:
 # Linux 平台配置
 linux:
   # 可执行文件名
-  executableName: LCY Music Pro
+  executableName: LCYMusicPro
   # 应用程序的图标文件路径
   icon: public/imgs/icons/favicon-512x512.png
   # 构建类型
