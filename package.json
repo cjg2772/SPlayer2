@@ -1,5 +1,5 @@
 {
-  "name": "LCY Music Pro",
+  "name": "LCYMusicPro",
   "version": "1.0.0",
   "description": "A Music Player",
   "main": "./out/main/index.js",
