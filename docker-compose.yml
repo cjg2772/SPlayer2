@@ -2,8 +2,8 @@ services:
   SPlayer:
     build:
       context: .
-    image: splayer
-    container_name: SPlayer
+    image: lcymusicpro
+    container_name: LCYMusicPro
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
