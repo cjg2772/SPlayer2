@@ -55,7 +55,7 @@ const getQrData = async () => {
   } catch (error) {
     clearInterval(qrCheckInterval.value);
     console.error("二维码获取失败：", error);
-    $message("获取登陆二维码出现问题: ", error)
+    $message("获取登录二维码出现问题: ", error)
   }
 };
 
