@@ -92,7 +92,7 @@ class MainProcess {
     }
 
     // 注册应用协议
-    app.setAsDefaultProtocolClient("LCY Music Pro");
+    app.setAsDefaultProtocolClient("LCYMusicPro");
     // 应用程序准备好之前注册
     protocol.registerSchemesAsPrivileged([
       { scheme: "app", privileges: { secure: true, standard: true } },
