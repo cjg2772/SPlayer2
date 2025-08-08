@@ -16,7 +16,7 @@
         <img class="logo" src="/imgs/icons/favicon.png?asset" alt="logo" />
       </div>
       <n-alert type="error" style="margin-bottom: 16px;">
-        警告: 在本站登录可能会被官方误判而被冻结账号，故请选择不常用的账号进行登录
+        警告: 在 LCY Music Pro 登录您的网易云音乐账号可能会由于异常流量而导致账号被冻结，故请选择不常用的网易云音乐账号登录 LCY Music Pro 。
       </n-alert>
       <!-- 登录方式 -->
       <n-tabs class="login-tabs" default-value="login-qr" type="segment" animated>
