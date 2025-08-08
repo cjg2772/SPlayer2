@@ -9,7 +9,7 @@
       class="phone-form"
     >
       <n-alert type="error" style="margin-bottom: 16px;">
-        提示: 由于站点搭建于中国香港地区，可能导致手机号登录失败。若手机号登录失败，请重新尝试或使用扫码登录
+        提示: 由于 LCY Music Pro 的服务器位于中国香港地区，可能导致使用手机号登录您的网易云音乐账号时存在登录失败的情况。若使用手机号登录失败，请重新尝试或使用扫码登录。
       </n-alert>
       <n-form-item path="phone">
         <n-input v-model:value="phoneFormData.phone" placeholder="请输入手机号">
