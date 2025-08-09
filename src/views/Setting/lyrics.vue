@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="set-type">
     <n-h3 prefix="bar"> 歌词 </n-h3>
     <n-collapse>
@@ -105,135 +105,161 @@
           <n-switch v-model:value="lrcMousePause" :round="false" />
         </n-card>
       </n-collapse-item>
-    <n-collapse-item title="歌词类型设置">
-      <n-card class="set-item">
-        <div class="name">
-          <div class="dev">
-            显示逐字歌词
-          </div>
-          <n-text class="tip">是否在具有逐字歌词时显示</n-text>
-        </div>
-        <n-switch v-model:value="showYrc" :disabled="useTTMLFormat" :round="false" />
-      </n-card>
-      <n-card class="set-item">
-        <div class="name">
-          <div class="dev">
-            显示逐字歌词动画
-          </div>
-          <n-text class="tip">可能会造成卡顿等性能问题，手机端建议关闭</n-text>
-        </div>
-        <n-switch v-model:value="showYrcAnimation" :disabled="!showYrc" :round="false" />
-      </n-card>
-      <n-card class="set-item">
-        <div class="name">
-          显示歌词翻译
-          <n-text class="tip">是否在具有翻译歌词时显示</n-text>
-        </div>
-        <n-switch v-model:value="showTransl" :disabled="useAMLyrics" :round="false" />
-      </n-card>
-      <n-card class="set-item">
-        <div class="name">
-          显示歌词音译
-          <n-text class="tip">是否在具有音译歌词时显示</n-text>
-        </div>
-        <n-switch v-model:value="showRoma" :disabled="useAMLyrics" :round="false" />
-      </n-card>
-    </n-collapse-item>
-    <n-collapse-item title="歌词渲染设置">
-      <n-card class="set-item">
-        <n-collapse>
-          <n-collapse-item title="Apple Music Like Lyrics 设置">
-            <div class="name">
-              使用Apple Music-Like Lyrics渲染器
-              <n-text class="tip">
-                Apple Music-Like Lyrics渲染器可能会造成卡顿等性能问题，手机端建议关闭
-              </n-text>
-            </div>
-            <n-switch v-model:value="useAMLyrics" :round="false" />
-            <div class="name" style="margin-top: 16px;">
-              使用AMLL弹簧渲染效果
-              <n-text class="tip">
-                开启本项会使用Apple Music-Like Lyrics组件的弹簧效果
-              </n-text>
-            </div>
-            <n-switch v-model:value="useAMSpring" :round="false" />
-            <div class="name" style="margin-top: 16px;">
-              <div class="dev">
-                使用TTML格式歌词
-                <n-tag :bordered="false" round size="small" type="warning">
-                  开发中
-                  <template #icon>
-                    <n-icon>
-                      <SvgIcon icon="code" />
-                    </n-icon>
-                  </template>
-                </n-tag>
-              </div>
-              <n-text class="tip">
-                开启本项后，歌词将使用TTML格式歌词替换原有的LRC格式歌词, LCY Music Pro 将尝试从 Internet 获取TTML歌词, 若获取失败则仍使用LRC格式歌词
-              </n-text>
-            </div>
-            <n-switch v-model:value="useTTMLFormat" :disabled="!useAMLyrics" :round="false" />
-          </n-collapse-item>
-        </n-collapse>
+      <n-collapse-item title="歌词类型设置">
         <n-card class="set-item">
-        <div class="name">
-          弹簧动画参数
-          <span class="tip">调整歌词动画的弹性效果</span>
-        </div>
-        <n-collapse>
-          <n-collapse-item title="横向移动">
-            <n-form-item label="质量">
-              <n-input-number v-model:value="springParams.posX.mass" :min="0.1" :step="0.1" />
-            </n-form-item>
-            <n-form-item label="阻尼">
-              <n-input-number v-model:value="springParams.posX.damping" :min="0" :step="1" />
-            </n-form-item>
-            <n-form-item label="刚度">
-              <n-input-number v-model:value="springParams.posX.stiffness" :min="0" :step="1" />
-            </n-form-item>
-          </n-collapse-item>
-          <n-collapse-item title="纵向移动">
-            <n-form-item label="质量">
-              <n-input-number v-model:value="springParams.posY.mass" :min="0.1" :step="0.1" />
-            </n-form-item>
-            <n-form-item label="阻尼">
-              <n-input-number v-model:value="springParams.posY.damping" :min="0" :step="1" />
-            </n-form-item>
-            <n-form-item label="刚度">
-              <n-input-number v-model:value="springParams.posY.stiffness" :min="0" :step="1" />
-            </n-form-item>
-          </n-collapse-item>
-          <n-collapse-item title="缩放">
-            <n-form-item label="质量">
-              <n-input-number v-model:value="springParams.scale.mass" :min="0.1" :step="0.1" />
-            </n-form-item>
-            <n-form-item label="阻尼">
-              <n-input-number v-model:value="springParams.scale.damping" :min="0" :step="1" />
-            </n-form-item>
-            <n-form-item label="刚度">
-              <n-input-number v-model:value="springParams.scale.stiffness" :min="0" :step="1" />
-            </n-form-item>
-          </n-collapse-item>
-        </n-collapse>
-      </n-card>
-      </n-card>
-      <n-card class="set-item">
-        <div class="name">
-          歌词自动聚焦
-          <n-text class="tip">是否聚焦显示当前播放行，其他行将模糊显示, 手机端建议关闭</n-text>
-        </div>
-        <n-switch v-model:value="lyricsBlur" :round="false" />
-      </n-card>
-    </n-collapse-item>
-  </n-collapse>
+          <div class="name">
+            <div class="dev">
+              显示逐字歌词
+            </div>
+            <n-text class="tip">是否在具有逐字歌词时显示</n-text>
+          </div>
+          <n-switch v-model:value="showYrc" :disabled="useTTMLFormat" :round="false" />
+        </n-card>
+        <n-card class="set-item">
+          <div class="name">
+            <div class="dev">
+              显示逐字歌词动画
+            </div>
+            <n-text class="tip">可能会造成卡顿等性能问题，手机端建议关闭</n-text>
+          </div>
+          <n-switch v-model:value="showYrcAnimation" :disabled="!showYrc" :round="false" />
+        </n-card>
+        <n-card class="set-item">
+          <div class="name">
+            显示歌词翻译
+            <n-text class="tip">是否在具有翻译歌词时显示</n-text>
+          </div>
+          <n-switch v-model:value="showTransl" :disabled="useAMLyrics" :round="false" />
+        </n-card>
+        <n-card class="set-item">
+          <div class="name">
+            显示歌词音译
+            <n-text class="tip">是否在具有音译歌词时显示</n-text>
+          </div>
+          <n-switch v-model:value="showRoma" :disabled="useAMLyrics" :round="false" />
+        </n-card>
+      </n-collapse-item>
+      <n-collapse-item title="歌词渲染设置">
+        <n-card class="set-item">
+          <n-collapse>
+            <n-collapse-item title="Apple Music Like Lyrics 设置">
+              <div class="name">
+                使用Apple Music-Like Lyrics渲染器
+                <n-text class="tip">
+                  Apple Music-Like Lyrics渲染器可能会造成卡顿等性能问题，手机端建议关闭
+                </n-text>
+              </div>
+              <n-switch v-model:value="useAMLyrics" :round="false" />
+              <div class="name" style="margin-top: 16px;">
+                使用AMLL弹簧渲染效果
+                <n-text class="tip">
+                  开启本项会使用Apple Music-Like Lyrics组件的弹簧效果
+                </n-text>
+              </div>
+              <n-switch v-model:value="useAMSpring" :round="false" />
+              <div class="name" style="margin-top: 16px;">
+                <div class="dev">
+                  使用TTML格式歌词
+                  <n-tag :bordered="false" round size="small" type="warning">
+                    开发中
+                    <template #icon>
+                      <n-icon>
+                        <SvgIcon icon="code" />
+                      </n-icon>
+                    </template>
+                  </n-tag>
+                </div>
+                <n-text class="tip">
+                  开启本项后，歌词将使用TTML格式歌词替换原有的LRC格式歌词, LCY Music Pro 将尝试从 Internet 获取TTML歌词, 若获取失败则仍使用LRC格式歌词
+                </n-text>
+              </div>
+              <n-switch v-model:value="useTTMLFormat" :disabled="!useAMLyrics" :round="false" />
+            </n-collapse-item>
+          </n-collapse>
+          <n-card class="set-item">
+            <div class="name">
+              弹簧动画参数
+              <span class="tip">调整歌词动画的弹性效果</span>
+            </div>
+            <n-collapse>
+              <n-collapse-item title="横向移动">
+                <n-form-item label="质量">
+                  <n-input-number v-model:value="springParams.posX.mass" :min="0.1" :step="0.1" />
+                </n-form-item>
+                <n-form-item label="阻尼">
+                  <n-input-number v-model:value="springParams.posX.damping" :min="0" :step="1" />
+                </n-form-item>
+                <n-form-item label="刚度">
+                  <n-input-number v-model:value="springParams.posX.stiffness" :min="0" :step="1" />
+                </n-form-item>
+              </n-collapse-item>
+              <n-collapse-item title="纵向移动">
+                <n-form-item label="质量">
+                  <n-input-number v-model:value="springParams.posY.mass" :min="0.1" :step="0.1" />
+                </n-form-item>
+                <n-form-item label="阻尼">
+                  <n-input-number v-model:value="springParams.posY.damping" :min="0" :step="1" />
+                </n-form-item>
+                <n-form-item label="刚度">
+                  <n-input-number v-model:value="springParams.posY.stiffness" :min="0" :step="1" />
+                </n-form-item>
+              </n-collapse-item>
+              <n-collapse-item title="缩放">
+                <n-form-item label="质量">
+                  <n-input-number v-model:value="springParams.scale.mass" :min="0.1" :step="0.1" />
+                </n-form-item>
+                <n-form-item label="阻尼">
+                  <n-input-number v-model:value="springParams.scale.damping" :min="0" :step="1" />
+                </n-form-item>
+                <n-form-item label="刚度">
+                  <n-input-number v-model:value="springParams.scale.stiffness" :min="0" :step="1" />
+                </n-form-item>
+              </n-collapse-item>
+            </n-collapse>
+          </n-card>
+        </n-card>
+        <n-card class="set-item">
+          <div class="name">
+            歌词自动聚焦
+            <n-text class="tip">是否聚焦显示当前播放行，其他行将模糊显示, 手机端建议关闭</n-text>
+          </div>
+          <n-switch v-model:value="lyricsBlur" :round="false" />
+        </n-card>
+      </n-collapse-item>
+      <!-- 新增播放背景样式 -->
+      <n-collapse-item title="播放背景设置">
+        <n-card class="set-item">
+          <div class="name">
+            播放背景样式
+            <n-text class="tip">
+              {{
+                playerBackgroundType === "animation-legacy"
+                  ? "流体效果，较消耗性能，请谨慎开启"
+                  : playerBackgroundType === "blur"
+                    ? "将封面模糊处理为背景"
+                    : playerBackgroundType === "gradient"
+                      ? "提取封面主色为渐变色"
+                      : "无背景"
+              }}
+            </n-text>
+          </div>
+          <n-select
+            v-model:value="playerBackgroundType"
+            :options="playerBackgroundOptions"
+            class="set"
+          />
+        </n-card>
+      </n-collapse-item>
+    </n-collapse>
   </div>
 </template>
 
 <script setup>
 import { storeToRefs } from "pinia";
-import { watch } from "vue";
+import { watch, h } from "vue";
 import { siteSettings } from "@/stores";
+import { NTag, NIcon } from "naive-ui";
+import SvgIcon from "@/components/SvgIcon.vue";
 
 const settings = siteSettings();
 const {
@@ -253,7 +279,47 @@ const {
   lyricsFont,
   springParams,
   useTTMLFormat,
+  playerBackgroundType
 } = storeToRefs(settings);
+
+// 播放背景样式选项
+const playerBackgroundOptions = [
+  {
+    label: () =>
+      h(
+        "div",
+        { style: "display: flex; align-items: center; gap: 6px;" },
+        [
+          h("span", "流体效果"),
+          h(
+            NTag,
+            { bordered: false, round: true, size: "small", type: "warning" },
+            {
+              icon: () =>
+                h(NIcon, null, {
+                  default: () => h(SvgIcon, { icon: "code" })
+                }),
+              default: () => "开发中"
+            }
+          )
+        ]
+      ),
+    value: "animation-legacy",
+    disabled: true
+  },
+  {
+    label: "封面模糊",
+    value: "blur"
+  },
+  {
+    label: "主色渐变",
+    value: "gradient"
+  },
+  {
+    label: "无背景",
+    value: "none"
+  }
+];
 
 // 监听TTML格式开关状态
 watch(useTTMLFormat, (newVal) => {
@@ -271,10 +337,11 @@ watch(useAMLyrics, (newVal) => {
 // 更新全局歌词字体
 const updateLyricsFont = () => {
   document.documentElement.style.setProperty('--main-font-family-lyric', `"${settings.lyricsFont}", system-ui, -apple-system, sans-serif`);
-}
+};
 </script>
 
 <style lang="scss" scoped>
+/* 保持你原来的样式不变 */
 .set-type {
   .n-collapse {
     background-color: transparent;
