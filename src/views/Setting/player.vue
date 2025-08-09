@@ -123,17 +123,21 @@
             v-model:value="playerBackgroundType"
             :options="[
               {
-                label: '流体效果',
+                label: () =>
+                  h('div', { style: 'display: flex; align-items: center; gap: 6px;' }, [
+                    h('span', '流体效果'),
+                    h(
+                      NTag,
+                      { bordered: false, round: true, size: 'small', type: 'warning' },
+                      {
+                        icon: () =>
+                          h(NIcon, null, { default: () => h(SvgIcon, { icon: 'code' }) }),
+                        default: () => '开发中'
+                      }
+                    )
+                  ]),
                 value: 'animation-legacy',
                 disabled: true
-                <n-tag :bordered="false" round size="small" type="warning">
-                  开发中
-                  <template #icon>
-                    <n-icon>
-                      <SvgIcon icon="code" />
-                    </n-icon>
-                  </template>
-                </n-tag>
               },
               {
                 label: '封面模糊',
