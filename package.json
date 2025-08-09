@@ -1,6 +1,6 @@
 {
   "name": "LCYMusicPro",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Music Player",
   "main": "./out/main/index.js",
   "author": "LCY Team",
