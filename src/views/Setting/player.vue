@@ -125,6 +125,7 @@
               {
                 label: '流体效果',
                 value: 'animation-legacy',
+                disabled: true
               },
               {
                 label: '封面模糊',
