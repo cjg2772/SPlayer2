@@ -74,7 +74,7 @@
       </n-card>
     </div>
     <n-card class="set-item">
-      <div class="name">显示 GitHub 仓库按钮</div>
+      <div class="name">显示 GitHub 按钮</div>
       <n-switch v-model:value="showGithub" :round="false" />
     </n-card>
     <n-collapse>
@@ -140,7 +140,7 @@
     <n-card class="set-item">
       <div class="name">
         清除PWA缓存
-        <n-text class="tip">此操作会清除PWA缓存并拉取新的版本, 适用于同步仓库部署完成后使用</n-text>
+        <n-text class="tip">此操作会清除PWA缓存并尝试获取新的版本</n-text>
       </div>
       <n-button strong secondary type="error" @click="getNewPage"> 获取 </n-button>
     </n-card>
