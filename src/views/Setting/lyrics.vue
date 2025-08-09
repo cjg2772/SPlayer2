@@ -79,7 +79,7 @@
             <n-text class="tip">歌词高亮时所处的位置</n-text>
           </div>
           <n-select 
-            :options="[
+            :options="[ 
               {
                 label: '靠近顶部',
                 value: 'start',
@@ -226,6 +226,7 @@
           <n-switch v-model:value="lyricsBlur" :round="false" />
         </n-card>
       </n-collapse-item>
+
       <!-- 新增播放背景样式 -->
       <n-collapse-item title="播放背景设置">
         <n-card class="set-item">
@@ -256,12 +257,16 @@
 
 <script setup>
 import { storeToRefs } from "pinia";
-import { watch, h } from "vue";
+import { watch, h, ref } from "vue";
 import { siteSettings } from "@/stores";
 import { NTag, NIcon } from "naive-ui";
 import SvgIcon from "@/components/SvgIcon.vue";
 
 const settings = siteSettings();
+
+// 先把 store 的 refs 收集到一个对象里，避免直接解构可能不存在的字段导致后续使用报错
+const storeRefs = storeToRefs(settings);
+
 const {
   alignAnchor,
   showYrc,
@@ -279,10 +284,23 @@ const {
   lyricsFont,
   springParams,
   useTTMLFormat,
-  playerBackgroundType
-} = storeToRefs(settings);
+} = storeRefs;
 
-// 播放背景样式选项
+// 为 playerBackgroundType 提供安全回退：如果 store 中没有此字段，则使用本地 ref('none')
+const playerBackgroundType = storeRefs.playerBackgroundType ?? ref("none");
+
+// 如果 store 后续包含该字段（或你希望当本地变动时同步回 store），我们做一个保护性的同步。
+// 这里：如果 settings 对象本身已有 playerBackgroundType 字段（即 store 最初包含它），
+ // 那么 playerBackgroundType 已经是 storeRefs.playerBackgroundType（一个 ref），无需额外同步。
+// 如果使用的是本地回退 ref，当本地变化且 store 后面添加了此字段时，会尝试写回（谨慎处理）。
+watch(playerBackgroundType, (val) => {
+  if (settings && Object.prototype.hasOwnProperty.call(settings, "playerBackgroundType")) {
+    // 如果 store 有该字段，则写回到 store（保持一致性）
+    settings.playerBackgroundType = val;
+  }
+});
+
+// 播放背景样式选项（第一个选项带有 n-tag）
 const playerBackgroundOptions = [
   {
     label: () =>
@@ -321,13 +339,14 @@ const playerBackgroundOptions = [
   }
 ];
 
-// 监听TTML格式开关状态
+// 监听TTML格式开关状态：开启后自动展示逐字歌词
 watch(useTTMLFormat, (newVal) => {
   if (newVal) {
     showYrc.value = true;
   }
 });
 
+// 当关闭 AM-Lyrics 时，关闭 TTML 格式开关
 watch(useAMLyrics, (newVal) => {
   if (newVal === false) {
     useTTMLFormat.value = false;
@@ -336,12 +355,15 @@ watch(useAMLyrics, (newVal) => {
 
 // 更新全局歌词字体
 const updateLyricsFont = () => {
-  document.documentElement.style.setProperty('--main-font-family-lyric', `"${settings.lyricsFont}", system-ui, -apple-system, sans-serif`);
+  // 使用 settings.lyricsFont（store）作为来源，保持原有逻辑
+  document.documentElement.style.setProperty(
+    "--main-font-family-lyric",
+    `"${settings.lyricsFont}", system-ui, -apple-system, sans-serif`
+  );
 };
 </script>
 
 <style lang="scss" scoped>
-/* 保持你原来的样式不变 */
 .set-type {
   .n-collapse {
     background-color: transparent;
