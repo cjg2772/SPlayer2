@@ -77,7 +77,7 @@
   <div v-else class="set-type">
     <n-h3 prefix="bar"> 系统 </n-h3>
     <n-card class="set-item">
-      <div class="name">该设置项为桌面端独占功能</div>
+      <div class="name">该设置项为 Windows 客户端功能</div>
     </n-card>
   </div>
 </template>
