@@ -161,16 +161,16 @@
               <div class="dev">
                 使用TTML格式歌词
                 <n-tag :bordered="false" round size="small" type="warning">
-                开发中
-                <template #icon>
-                  <n-icon>
-                    <SvgIcon icon="code" />
-                  </n-icon>
-                </template>
-              </n-tag>
+                  开发中
+                  <template #icon>
+                    <n-icon>
+                      <SvgIcon icon="code" />
+                    </n-icon>
+                  </template>
+                </n-tag>
               </div>
               <n-text class="tip">
-                开启本项后，歌词将使用TTML格式歌词, 会从SteveXMH的歌词仓库获取TTML歌词, 如果没有TTML歌词则回退使用LRC歌词
+                开启本项后，歌词将使用TTML格式歌词替换原有的LRC格式歌词, LCY Music Pro 将尝试从 Internet 获取TTML歌词, 若获取失败则仍使用LRC格式歌词
               </n-text>
             </div>
             <n-switch v-model:value="useTTMLFormat" :disabled="!useAMLyrics" :round="false" />
