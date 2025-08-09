@@ -99,7 +99,7 @@
                 value: 'cover',
               },
               {
-                label: '唱片模式 (不推荐)',
+                label: '唱片模式',
                 value: 'record',
               },
             ]"
@@ -196,11 +196,11 @@ const {
 
 // 音源选项
 const musicSourceOptions = [
-  { label: "第三方网易云(pyncmd)", value: "pyncmd" },
-  { label: "QQ音乐(qq)", value: "qq" },
-  { label: "酷我(kuwo)", value: "kuwo" },
-  { label: "咪咕(migu)", value: "migu" },
-  { label: "酷狗(kugou)", value: "kugou" },
+  { label: "网易云音乐", value: "pyncmd" },
+  { label: "QQ音乐", value: "qq" },
+  { label: "酷我音乐", value: "kuwo" },
+  { label: "咪咕音乐", value: "migu" },
+  { label: "酷狗音乐", value: "kugou" },
 ];
 
 // 复选框选中项
