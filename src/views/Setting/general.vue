@@ -14,10 +14,6 @@
             v-model:value="themeType"
             :options="[
               {
-                label: '跟随系统',
-                value: 'auto',
-              },
-              {
                 label: '浅色模式',
                 value: 'light',
               },
