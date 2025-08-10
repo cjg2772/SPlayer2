@@ -18,7 +18,7 @@
                 </template>
               </n-tag>
             </div>
-            <n-text class="tip">开启后将跟随系统主题设置 LCY Music Pro 的应用主题</n-text>
+            <n-text class="tip">开启后将跟随系统主题设置 LCY Music Pro 的应用主题，该功能仅支持 Windows 客户端</n-text>
           </div>
           <n-switch v-model:value="themeAuto" :disabled="!checkPlatform.electron()" :round="false" />
         </n-card>
