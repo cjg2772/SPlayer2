@@ -6,7 +6,7 @@
       <!-- 主题设置 -->
       <n-collapse-item title="主题设置" name="theme">
         <n-card class="set-item">
-          <div class="name">
+          <div class="dev">
             主题模式跟随系统
             <n-tag :bordered="false" round size="small" type="warning">
               开发中
