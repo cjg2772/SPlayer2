@@ -4,7 +4,7 @@
     <n-card class="set-item">
       <div class="name">
         默认下载文件夹
-        <n-text class="tip">{{ downloadPath || "不设置则会每次选择保存位置" }}</n-text>
+        <n-text class="tip">{{ downloadPath || "未设置则需在下载时选择保存位置，该功能仅支持 Windows 客户端" }}</n-text>
       </div>
       <n-flex>
         <Transition name="fade" mode="out-in">
