@@ -7,6 +7,29 @@
       <n-collapse-item title="主题设置" name="theme">
         <n-card class="set-item">
           <div class="name">
+            主题模式
+            <n-text class="tip">调整全局主题明暗模式</n-text>
+          </div>
+          <n-select
+            v-model:value="themeType"
+            :options="[
+              {
+                label: '跟随系统',
+                value: 'auto',
+              },
+              {
+                label: '浅色模式',
+                value: 'light',
+              },
+              {
+                label: '深色模式',
+                value: 'dark',
+              },
+            ]"
+          />
+        </n-card>
+        <n-card class="set-item">
+          <div class="name">
             <div class="dev">
               全局动态取色
               <n-tag :bordered="false" round size="small" type="warning">
