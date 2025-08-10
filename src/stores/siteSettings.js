@@ -30,7 +30,7 @@ const useSiteSettingsStore = defineStore("siteSettings", {
       themeAutoCoverType: "secondary",
       // 播放部分
       playCoverType: "cover", // 播放器样式
-      songLevel: "exhigh", // 歌曲音质
+      songLevel: "jymaster", // 歌曲音质
       autoPlay: false, // 程序启动时自动播放
       songVolumeFade: true, // 歌曲渐入渐出
       useUnmServer: true, // 是否使用网易云解灰
