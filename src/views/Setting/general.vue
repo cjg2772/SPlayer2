@@ -19,7 +19,7 @@
           </div>
           <n-select
             v-model:value="themeType"
-            :disabled="!themeAuto"
+            :disabled="themeAuto"
             :options="[
               {
                 label: '浅色模式',
