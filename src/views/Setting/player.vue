@@ -124,8 +124,7 @@
             :options="[
               {
                 label: '流体效果',
-                value: 'animation-legacy',
-                disabled: true
+                value: 'animation',
               },
               {
                 label: '封面模糊',
