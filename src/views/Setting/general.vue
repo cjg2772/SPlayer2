@@ -6,13 +6,12 @@
       <!-- 主题设置 -->
       <n-collapse-item title="主题设置" name="theme">
         <n-card class="set-item">
-          <div class="label">
-            <n-text class="name">主题模式</n-text>
-            <n-text class="tip" :depth="3">调整全局主题明暗模式</n-text>
+          <div class="name">
+            主题模式
+            <n-text class="tip">调整全局主题明暗模式</n-text>
           </div>
           <n-select
-            v-model:value="settingStore.themeMode"
-            class="set"
+            v-model:value="settings.settingStore.themeMode"
             :options="[
               {
                 label: '跟随系统',
