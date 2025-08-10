@@ -6,16 +6,18 @@
       <!-- 主题设置 -->
       <n-collapse-item title="主题设置" name="theme">
         <n-card class="set-item">
-          <div class="dev">
-            主题模式跟随系统
-            <n-tag :bordered="false" round size="small" type="warning">
-              开发中
-              <template #icon>
-                <n-icon>
-                  <SvgIcon icon="code" />
-                </n-icon>
-              </template>
-            </n-tag>
+          <div class="name">
+            <div class="dev">
+              主题模式跟随系统
+              <n-tag :bordered="false" round size="small" type="warning">
+                开发中
+                <template #icon>
+                  <n-icon>
+                    <SvgIcon icon="code" />
+                  </n-icon>
+                </template>
+              </n-tag>
+            </div>
             <n-text class="tip">开启后将跟随系统主题设置 LCY Music Pro 的应用主题</n-text>
           </div>
           <n-switch v-model:value="themeAuto" :round="false" />
