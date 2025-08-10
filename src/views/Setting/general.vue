@@ -20,7 +20,7 @@
             </div>
             <n-text class="tip">开启后将跟随系统主题设置 LCY Music Pro 的应用主题</n-text>
           </div>
-          <n-switch v-model:value="themeAuto" :round="false" />
+          <n-switch v-model:value="themeAuto" :disabled="!checkPlatform.electron()" :round="false" />
         </n-card>
         <n-card class="set-item">
           <div class="name">
