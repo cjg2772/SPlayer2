@@ -73,10 +73,7 @@
           :max="65535" class="set" placeholder="请填写代理服务器端口" />
       </n-card>
     </div>
-    <n-card class="set-item">
-      <div class="name">显示 GitHub 按钮</div>
-      <n-switch v-model:value="showGithub" :round="false" />
-    </n-card>
+    
     <n-collapse>
       <n-collapse-item title="网易云API设定">
         <n-card class="set-item">
