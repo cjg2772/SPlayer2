@@ -55,7 +55,7 @@
               </svg>
             </n-icon>
           </template>
-          网页设置
+          设置页
         </n-button>
       </div>
 
