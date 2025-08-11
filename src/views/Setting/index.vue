@@ -3,7 +3,7 @@
   <div :class="{ setting: true, 'use-cover': themeAutoCover }">
     <PageTransition type="fade-down" :duration="0.8">
       <n-h1 class="title">
-        <n-text>站点设置</n-text>
+        <n-text>设置</n-text>
       </n-h1>
     </PageTransition>
     <!-- 导航栏 -->
