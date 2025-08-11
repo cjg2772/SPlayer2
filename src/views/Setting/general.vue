@@ -40,6 +40,7 @@
                 value: 'dark',
               },
             ]"
+            class="set"
           />
         </n-card>
         <n-card class="set-item">
@@ -55,12 +56,12 @@
                 </template>
               </n-tag>
             </div>
-            <n-text class="tip">主题色是否跟随封面</n-text>
+            <n-text class="tip">LCY Music Pro 的主题色将跟随歌曲封面的色调,，该功能仅支持 Windows 客户端</n-text>
           </div>
           <n-switch
             v-model:value="themeAutoCover"
             :round="false"
-            :disabled="Object.keys(coverTheme)?.length === 0"
+            :disabled="Object.keys(coverTheme)?.length === 0" or "!checkPlatform.electron()"
             @update:value="themeAutoCoverChange"
           />
         </n-card>
