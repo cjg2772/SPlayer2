@@ -61,7 +61,7 @@
           <n-switch
             v-model:value="themeAutoCover"
             :round="false"
-            :disabled="Object.keys(coverTheme)?.length === 0" or "!checkPlatform.electron()"
+            :disabled="Object.keys(coverTheme)?.length === 0 || !checkPlatform.electron()"
             @update:value="themeAutoCoverChange"
           />
         </n-card>
