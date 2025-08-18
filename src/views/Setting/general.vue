@@ -29,7 +29,7 @@
           </div>
           <n-select
             v-model:value="themeType"
-            :disabled="themeAuto"
+            :disabled="themeAuto || themeAutoCover"
             :options="[
               {
                 label: '浅色模式',
@@ -56,12 +56,12 @@
                 </template>
               </n-tag>
             </div>
-            <n-text class="tip">LCY Music Pro 的主题色将跟随歌曲封面的色调,，该功能仅支持 Windows 客户端</n-text>
+            <n-text class="tip">LCY Music Pro 的主题色将跟随歌曲封面的色调，该功能仅支持 Windows 客户端</n-text>
           </div>
           <n-switch
             v-model:value="themeAutoCover"
             :round="false"
-            :disabled="Object.keys(coverTheme)?.length === 0 || !checkPlatform.electron()"
+            :disabled="Object.keys(coverTheme)?.length === 0 || !checkPlatform.electron() || themeType === 'light'"
             @update:value="themeAutoCoverChange"
           />
         </n-card>
