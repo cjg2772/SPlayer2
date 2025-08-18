@@ -198,7 +198,7 @@ const {
 const musicSourceOptions = [
   { label: "网易云音乐", value: "pyncmd" },
   { label: "QQ音乐", value: "qq" },
-  { label: "酷我音乐", value: "kuwo", disabled: true },
+  //{ label: "酷我音乐", value: "kuwo" },
   { label: "咪咕音乐", value: "migu" },
   { label: "酷狗音乐", value: "kugou" },
 ];
